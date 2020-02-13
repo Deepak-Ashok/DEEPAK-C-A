@@ -10,6 +10,7 @@ int main()
 	printf("enter the name of the output file:\n");
 	scanf("%s",outputfile);
 	fd1=fopen(inputfile,"r");
+	fd2=fopen(outputfile,"w");
 	if(fd1==NULL){
 		printf("input file doesnot exists\n");
 		exit(0);
@@ -22,8 +23,9 @@ int main()
 			fprintf(fd2,"%c",numAscii);
 			ch=fgetc(fd1);
 		}
-		fclose(fd2);
+		
 	}
+	fclose(fd2);
 	fclose(fd1);
 	printf("\n File is encrypted with name %s",outputfile);
 	return 0;
